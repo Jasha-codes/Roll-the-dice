@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<style>
+			h1 {
+				color:white;
+				text-align:center;
+				}
+			p {
+				color:white;
+				text-align:center;
+			}
+			
+			body {background-color: black;}
+			#logoImageDiv {
+				text-align:center;
+			}
+			#result {
+				text-align:center;
+				color:white;
+				font-size:40px;
+			}
+			#congratsMessage {
+				text-align:center;
+				color:yellow;
+				font-size:100px;
+			}
+			#rollButtonDiv {text-align:center;
+				margin: auto;}
+				
+		</style>
+		
+		<title>Dice Game</title>
+		<meta name="description" content="Our first page">
+	</head>
+
+	<body>
+		
+		<h1>Dice Game</h1>
+		
+		<div id = "logoImageDiv">
+			<img src="dice.jpg" alt="Dice">
+		</div>
+		
+		<p>Roll a 6 to Win a prize</p>
+		
+		<div id = "rollButtonDiv">
+			<button type="button" onclick="rollDice()">Click me to roll the dice!</button>
+		</div>
+		<p id = "result"></p>
+		<p id = "congratsMessage"></p>
+		
+	</body>
+	<script type = "text/javascript">
+		function rollDice() {   
+				var result = Math.floor(Math.random() * 6) + 1;
+				document.getElementById('result').innerHTML = result
+				if(result % 2 == 0) {
+					document.getElementById('congratsMessage').innerHTML = "Well done you win a prize!"
+					document.getElementById("congratsMessage").style.color = "white";
+				} else {
+					document.getElementById('congratsMessage').innerHTML = "No prize Today!"
+					document.getElementById("congratsMessage").style.color = "red";
+				}
+         }  
+	</script> 
+</html>
